@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#00296B">
+<meta name="description" content="Portofolio desainer & fotografer">
+<title>Agung Yohana — Desainer & Fotografer</title>
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%2300296B"/><text y=".9em" font-size="70" fill="%23F0D000">Y</text></svg>'>
+<style>
+  :root{
+    --navy:#00296B; --navy2:#003A8C; --blue:#00509D; --yellow:#F0D000;
+    --ink:#0B1430; --paper:#F5F1E6; --mut:#AFC2E0;
+    --serif:"Georgia","Times New Roman",serif;
+    --sans:"Inter","Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--navy);color:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+  /* NAV */
+  header{position:fixed;inset:0 0 auto;z-index:60;background:rgba(0,41,107,.86);backdrop-filter:blur(12px);border-bottom:1px solid rgba(240,208,0,.25)}
+  nav{display:flex;align-items:center;gap:8px;height:64px}
+  .brand{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:.5px}
+  .brand b{color:var(--yellow)}
+  nav .links{margin-left:auto;display:flex;gap:22px;font-size:13px;letter-spacing:1.6px;text-transform:uppercase}
+  nav .links a{padding:6px 2px;border-bottom:2px solid transparent;font-weight:600}
+  nav .links a:hover{border-color:var(--yellow);color:var(--yellow)}
+  .burger{display:none;margin-left:auto;background:none;border:0;color:#fff;font-size:22px;cursor:pointer}
+
+  /* HERO */
+  .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 0 60px}
+  .hero .deco{position:absolute;pointer-events:none}
+  .deco-r{width:340px;height:340px;border:54px solid var(--yellow);transform:rotate(18deg);right:-90px;top:14%;opacity:.9}
+  .deco-b{width:200px;height:200px;border:44px solid rgba(255,255,255,.12);transform:rotate(-14deg);left:8%;bottom:8%}
+  .deco-l{width:16px;height:16px;background:var(--yellow);right:22%;bottom:20%}
+  .deco-x{width:10px;height:10px;background:var(--blue);left:42%;top:16%}
+  .hero .kick{color:var(--yellow);letter-spacing:4px;text-transform:uppercase;font-size:12px;font-weight:700}
+  .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(44px,9vw,96px);line-height:1;margin:18px 0 8px}
+  .hero h1 .yel{color:var(--yellow)}
+  .hero .role{font-size:clamp(16px,2.4vw,22px);color:#E6EDFA;letter-spacing:1px;text-transform:uppercase;font-weight:600}
+  .hero p{max-width:560px;color:var(--mut);margin:22px 0 30px;font-size:16px}
+  .cta{display:inline-flex;gap:10px;align-items:center;background:var(--yellow);color:var(--ink);font-weight:800;padding:15px 28px;border-radius:6px;font-size:14px;letter-spacing:1px;text-transform:uppercase}
+  .cta:hover{transform:translateY(-2px)}
+  .hero .chips{display:flex;gap:10px;margin-top:26px}
+  .chip{border:1px solid rgba(240,208,0,.55);color:var(--yellow);padding:8px 18px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+
+  /* MARQUEE */
+  .band{background:var(--yellow);color:var(--ink);overflow:hidden;padding:14px 0;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:15px;white-space:nowrap}
+  .band span{margin-right:40px}
+
+  /* SECTIONS */
+  section{padding:96px 0}
+  .k{color:var(--yellow);letter-spacing:4px;text-transform:uppercase;font-size:12px;font-weight:700}
+  h2.sec{font-family:var(--serif);font-size:clamp(30px,5vw,48px);margin:12px 0 8px;line-height:1.1}
+  .sub{color:var(--mut);max-width:620px;font-size:15px;margin-bottom:40px}
+  .cols{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:start}
+  .tentang p{color:#E6EDFA;font-size:17px;margin-bottom:14px}
+  .stat{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap}
+  .stat b{font-family:var(--serif);font-size:38px;color:var(--yellow);display:block}
+  .stat span{font-size:12px;color:var(--mut);letter-spacing:1px;text-transform:uppercase}
+  ul.skill{list-style:none;display:grid;gap:10px}
+  ul.skill li{display:flex;align-items:center;gap:10px;background:rgba(0,80,157,.35);border:1px solid rgba(240,208,0,.18);padding:12px 16px;border-radius:8px;font-size:14px}
+  ul.skill li::before{content:"";width:8px;height:8px;background:var(--yellow)}
+
+  /* KARYA tabs */
+  .tabs{display:flex;gap:10px;margin-bottom:34px;flex-wrap:wrap}
+  .tab{background:transparent;border:1px solid rgba(240,208,0,.45);color:var(--yellow);padding:11px 24px;border-radius:99px;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
+  .tab.on{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+  .card{position:relative;background:var(--navy2);border-radius:10px;overflow:hidden;cursor:zoom-in;border:1px solid rgba(255,255,255,.08)}
+  .card img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:.35s}
+  .card:hover img{transform:scale(1.05)}
+  .card .info{position:absolute;inset:auto 0 0;padding:34px 16px 14px;background:linear-gradient(transparent,rgba(4,12,35,.9))}
+  .card .info b{font-size:15px}
+  .card .info span{display:block;color:var(--yellow);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;font-weight:700}
+
+  /* KONTAK */
+  section.kontak{background:linear-gradient(180deg,var(--navy),var(--navy2))}
+  .kbtns{display:flex;gap:14px;flex-wrap:wrap}
+  .kbtn{display:inline-flex;gap:10px;align-items:center;background:var(--yellow);color:var(--ink);font-weight:800;padding:15px 26px;border-radius:6px;font-size:14px}
+  .kbtn.gh{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35)}
+  .kbtn:hover{transform:translateY(-2px)}
+
+  footer{border-top:1px solid rgba(240,208,0,.25);padding:26px 0;text-align:center;color:var(--mut);font-size:12.5px}
+  footer b{color:var(--yellow)}
+
+  /* LIGHTBOX */
+  .lb{position:fixed;inset:0;background:rgba(4,10,28,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:26px}
+  .lb.on{display:flex}
+  .lb img{max-width:92vw;max-height:80vh;border-radius:8px}
+  .lb .cap{position:absolute;left:0;right:0;bottom:26px;text-align:center;color:var(--mut);font-size:13px}
+  .lb .cap b{color:#fff}
+  .lb .nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:1px solid rgba(255,255,255,.3);color:#fff;width:52px;height:52px;border-radius:50%;font-size:22px;cursor:pointer}
+  .lb .nav:hover{background:var(--yellow);color:var(--ink)}
+  .lb .prev{left:18px}.lb .next{right:18px}
+  .lb .x{position:absolute;top:18px;right:22px;background:none;border:0;color:#fff;font-size:30px;cursor:pointer;z-index:101}
+
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(150%);background:var(--yellow);color:var(--ink);font-weight:700;padding:12px 22px;border-radius:8px;z-index:90;transition:.3s;font-size:13px}
+  .toast.on{transform:translateX(-50%) translateY(0)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:.6s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:860px){
+    nav .links{position:fixed;top:64px;left:0;right:0;background:var(--navy);flex-direction:column;padding:18px 26px;gap:16px;border-bottom:1px solid rgba(240,208,0,.25);transform:translateY(-130%);transition:.3s}
+    nav .links.open{transform:none}
+    .burger{display:block}
+    .cols{grid-template-columns:1fr}
+    .deco-r{width:220px;height:220px;border:36px solid var(--yellow)}
+  }
+</style>
+</head>
+<body>
+
+<header><nav class="wrap">
+  <a class="brand" href="#beranda"><b>Y</b>ohana<span style="color:var(--yellow)">.</span></a>
+  <div class="links" id="menu">
+    <a href="#beranda">Beranda</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#karya">Karya</a>
+    <a href="#kontak">Kontak</a>
+  </div>
+  <button class="burger" id="burger" aria-label="menu">☰</button>
+</nav></header>
+
+<section class="hero" id="beranda">
+  <div class="deco deco-r"></div><div class="deco deco-b"></div><div class="deco deco-l"></div><div class="deco deco-x"></div>
+  <div class="wrap">
+    <span class="kick" data-t="nama"></span>
+    <h1><span data-t="nama"></span><br><span class="yel" data-t="role"></span></h1>
+    <p class="role" data-t="roleKecil" hidden></p>
+    <p data-t="tagline"></p>
+    <div class="chips"><span class="chip">Desain Grafis</span><span class="chip">Fotografi</span><span class="chip" data-t="lokasi"></span></div>
+    <a class="cta" href="#karya" style="margin-top:30px">Lihat Karya ↓</a>
+  </div>
+</section>
+
+<div class="band" id="band"></div>
+
+<section id="tentang">
+  <div class="wrap cols">
+    <div>
+      <span class="k">Tentang</span>
+      <h2 class="sec">Senang berkenalan.<br>Tentang <span style="color:var(--yellow)">saya</span>.</h2>
+      <div class="tentang reveal" data-t="bioHtml"></div>
+    </div>
+    <div>
+      <span class="k">Keahlian</span>
+      <h2 class="sec" id="secSkill">Bidang kerja</h2>
+      <div class="stat reveal">
+        <div><b data-t="angka1">15+</b><span data-t="angka1Lb">Karya Desain</span></div>
+        <div><b data-t="angka2">5</b><span data-t="angka2Lb">Karya Foto</span></div>
+      </div>
+      <ul class="skill reveal" id="skillList" style="margin-top:24px"></ul>
+    </div>
+  </div>
+</section>
+
+<section id="karya" style="background:linear-gradient(180deg,var(--navy) 0%,#04184d 100%)">
+  <div class="wrap">
+    <span class="k">Portofolio</span>
+    <h2 class="sec">Karya <span style="color:var(--yellow)">terpilih</span></h2>
+    <p class="sub">Klik gambar untuk melihat lebih besar. Gunakan tab untuk memilih kategori.</p>
+    <div class="tabs" id="tabs"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="kontak" id="kontak">
+  <div class="wrap">
+    <span class="k">Kontak</span>
+    <h2 class="sec">Mari <span style="color:var(--yellow)">berkolaborasi</span></h2>
+    <p class="sub" data-t="bio"></p>
+    <div class="kbtns" id="kontakBtns"></div>
+  </div>
+</section>
+
+<footer><div class="wrap">© <span id="tahun"></span> <b data-t="nama"></b> — Desainer & Fotografer. Dibuat dengan tema <b>biru & kuning</b>.</div></footer>
+
+<div class="lb" id="lb"><button class="x" id="lbX">✕</button><img id="lbImg" alt="karya"><div class="cap" id="lbCap"></div><button class="nav prev" id="lbPrev">‹</button><button class="nav next" id="lbNext">›</button></div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ====== DATA CADANGAN (fallback bila konten.json tidak terbaca) ====== */
+const DEFAULT = {
+  nama:"Agung Yohana", role:"Desainer & Fotografer",
+  lokasi:"Yogyakarta, Indonesia",
+  tagline:"Mengubah ide menjadi visual — dari desain grafis sampai cerita lewat lensa.",
+  bio:"Kreator visual asal Yogyakarta. Fokus pada desain grafis, tipografi, dan fotografi.",
+  kontak:{ email:"", wa:"", github:"agungyohana05-cmyk" },
+  karya:{ Desain:[
+    {file:"assets/desain/artboard-1-copy.jpg",judul:"Karya Desain 01",tag:"Desain Grafis"},
+    {file:"assets/desain/artboard-1.jpg",judul:"Karya Desain 02",tag:"Desain Grafis"}
+  ], Fotografi:[
+    {file:"assets/foto/alf03994.jpg",judul:"Fotografi 01",tag:"Lanskap"}
+  ]}
+};
+
+let B = DEFAULT, WORKS = [], LBOX = [], LBI = 0, CAT = null;
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+const toast=m=>{const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove("on"),2200);};
+
+fetch("konten.json").then(r=>{if(!r.ok)throw 0;return r.json();}).then(d=>{B=Object.assign({},DEFAULT,d);build();}).catch(()=>{B=DEFAULT;build();});
+
+function build(){
+  document.querySelectorAll("[data-t]").forEach(el=>{
+    const v=el.getAttribute("data-t");
+    if(v==="nama") el.textContent=B.nama;
+    else if(v==="role") el.textContent=B.role;
+    else if(v==="roleKecil") el.textContent=B.role;
+    else if(v==="tagline") el.textContent=B.tagline;
+    else if(v==="lokasi") el.textContent=B.lokasi;
+    else if(v==="bio") el.textContent=B.bio;
+    else if(v==="bioHtml") el.innerHTML=B.bio.split("\n").map(p=>"<p>"+esc(p)+"</p>").join("");
+    else if(v in B) el.textContent=B[v];
+  });
+  document.title=B.nama+" — "+B.role;
+  $("#tahun").textContent=new Date().getFullYear();
+  $("#band").innerHTML=Array.from({length:6}).fill(B.role+"&nbsp;&nbsp;•&nbsp;&nbsp;"+B.nama+"&nbsp;&nbsp;•&nbsp;&nbsp;").join("");
+  $("#skillList").innerHTML=["Desain Grafis","Tipografi & Layout","Fotografi Lanskap","Editing & Retouch"].map(s=>"<li>"+s+"</li>").join("");
+  const cats=Object.keys(B.karya||{});
+  $("#tabs").innerHTML=cats.map((c,i)=>'<button class="tab'+(i===0?" on":"")+'" data-cat="'+esc(c)+'">'+esc(c)+"</button>").join("");
+  $("#tabs").querySelectorAll(".tab").forEach(t=>t.onclick=()=>{CAT=t.getAttribute("data-cat");setCat();});
+  CAT=cats[0]; setCat();
+  renderKontak();
+  bindReveal();
+}
+
+function setCat(){
+  $("#tabs").querySelectorAll(".tab").forEach(t=>t.classList.toggle("on",t.getAttribute("data-cat")===CAT));
+  WORKS=(B.karya&&B.karya[CAT])||[];
+  grid();
+}
+
+function grid(){
+  $("#grid").innerHTML=WORKS.map((w,i)=>'<div class="card reveal" data-i="'+i+'"><img src="'+esc(w.file)+'" alt="'+esc(w.judul)+'" loading="lazy"><div class="info"><b>'+esc(w.judul)+'</b><span>'+esc(w.tag||"")+'</span></div></div>').join("");
+  $("#grid").querySelectorAll("[data-i]").forEach((c,idx)=>c.onclick=()=>openLb(idx));
+  bindReveal();
+}
+
+function renderKontak(){
+  const d=B.kontak||{};
+  let h="";
+  if(d.wa) h+='<a class="kbtn" href="https://wa.me/'+esc(String(d.wa).replace(/[^\d]/g,""))+'">WhatsApp</a>';
+  if(d.email) h+='<a class="kbtn" href="mailto:'+esc(d.email)+'">Email</a>';
+  if(d.github) h+='<a class="kbtn gh" target="_blank" rel="noopener" href="https://github.com/'+esc(d.github)+'">GitHub ↗</a>';
+  if(!h) h='<span style="color:var(--mut)">Isi email/WA di konten.json — lihat PANDUAN-EDIT.md</span>';
+  $("#kontakBtns").innerHTML=h;
+}
+
+function openLb(i){
+  LBI=i; LBOX=WORKS;
+  showLb(true);
+}
+function showLb(on){
+  $("#lb").classList.toggle("on",on);
+  if(on){
+    const w=LBOX[LBI];
+    $("#lbImg").src=w.file; $("#lbImg").alt=w.judul;
+    $("#lbCap").innerHTML="<b>"+esc(w.judul)+"</b> &nbsp;·&nbsp; "+esc(w.tag||"")+" &nbsp;·&nbsp; "+String(LBI+1)+"/"+LBOX.length;
+  }
+}
+$("#lbX").onclick=()=>showLb(false);
+$("#lb").onclick=e=>{if(e.target.id==="lb")showLb(false);};
+$("#lbPrev").onclick=e=>{e.stopPropagation();LBI=(LBI-1+LBOX.length)%LBOX.length;showLb(true);};
+$("#lbNext").onclick=e=>{e.stopPropagation();LBI=(LBI+1)%LBOX.length;showLb(true);};
+document.addEventListener("keydown",e=>{
+  if(!$("#lb").classList.contains("on"))return;
+  if(e.key==="Escape")showLb(false);
+  if(e.key==="ArrowLeft")$("#lbPrev").click();
+  if(e.key==="ArrowRight")$("#lbNext").click();
+});
+
+$("#burger").onclick=()=>$("#menu").classList.toggle("open");
+$("#menu").querySelectorAll("a").forEach(a=>a.onclick=()=>$("#menu").classList.remove("open"));
+
+function bindReveal(){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+}
+</script>
+</body>
+</html>

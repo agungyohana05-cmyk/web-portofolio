@@ -1,0 +1,38 @@
+{
+  "nama": "Agung Yohana",
+  "role": "Desainer & Fotografer",
+  "tagline": "Mengubah ide menjadi visual — dari desain grafis sampai cerita lewat lensa.",
+  "bio": "Kreator visual asal Yogyakarta. Fokus pada desain grafis, tipografi, dan fotografi.\nBagian ini bisa kamu edit langsung di file konten.json — tidak perlu sentuh kode website.",
+  "lokasi": "Yogyakarta, Indonesia",
+  "kontak": {
+    "email": "",
+    "wa": "",
+    "github": "agungyohana05-cmyk"
+  },
+  "karya": {
+    "Desain": [
+      { "file": "assets/desain/artboard-1-copy.jpg", "judul": "Karya Desain 01", "tag": "Desain Grafis" },
+      { "file": "assets/desain/artboard-1.jpg", "judul": "Karya Desain 02", "tag": "Desain Grafis" },
+      { "file": "assets/desain/artboard-10.jpg", "judul": "Karya Desain 03", "tag": "Desain Grafis" },
+      { "file": "assets/desain/artboard-2-1.jpg", "judul": "Karya Desain 04", "tag": "Desain Grafis" },
+      { "file": "assets/desain/artboard-2-copy.jpg", "judul": "Karya Desain 05", "tag": "Desain Grafis" },
+      { "file": "assets/desain/artboard-2.jpg", "judul": "Karya Desain 06", "tag": "Desain Grafis" },
+      { "file": "assets/desain/artboard-3.jpg", "judul": "Karya Desain 07", "tag": "Desain Grafis" },
+      { "file": "assets/desain/artboard-4-copy.jpg", "judul": "Karya Desain 08", "tag": "Desain Grafis" },
+      { "file": "assets/desain/artboard-4.jpg", "judul": "Karya Desain 09", "tag": "Desain Grafis" },
+      { "file": "assets/desain/artboard-5-copy.jpg", "judul": "Karya Desain 10", "tag": "Desain Grafis" },
+      { "file": "assets/desain/artboard-5.jpg", "judul": "Karya Desain 11", "tag": "Desain Grafis" },
+      { "file": "assets/desain/artboard-6.jpg", "judul": "Karya Desain 12", "tag": "Desain Grafis" },
+      { "file": "assets/desain/artboard-7.jpg", "judul": "Karya Desain 13", "tag": "Desain Grafis" },
+      { "file": "assets/desain/artboard-8.jpg", "judul": "Karya Desain 14", "tag": "Desain Grafis" },
+      { "file": "assets/desain/artboard-9.jpg", "judul": "Karya Desain 15", "tag": "Desain Grafis" }
+    ],
+    "Fotografi": [
+      { "file": "assets/foto/alf03994.jpg", "judul": "Fotografi 01", "tag": "Lanskap" },
+      { "file": "assets/foto/alf04001.jpg", "judul": "Fotografi 02", "tag": "Lanskap" },
+      { "file": "assets/foto/alf04042.jpg", "judul": "Fotografi 03", "tag": "Lanskap" },
+      { "file": "assets/foto/dsc00362.jpg", "judul": "Fotografi 04", "tag": "Lanskap" },
+      { "file": "assets/foto/dsc00381.jpg", "judul": "Fotografi 05", "tag": "Lanskap" }
+    ]
+  }
+}
