@@ -9,29 +9,35 @@ memperbarui website setiap kamu menyimpan perubahan.
 
 ---
 
-## 1. Mengubah TEKS (nama, bio, kontak, judul karya)
+## 1. Mengubah TEKS (nama, bio, kontak, judul karya, pengalaman, pendidikan, achievement)
 
 1. Buka `github.com/agungyohana05-cmyk/web-portofolio`.
 2. Klik file **`konten.json`** → tombol **edit (pensil)** di kanan atas.
 3. Ubah teks di dalam tanda kutip `"..."` — JANGAN sampai menghapus koma.
-   Contoh: `"nama": "Agung Yohana"` → ganti sesuai keinginan.
+   Contoh: `"nama": "I Gede Agung Yohana Dharma"` → ganti sesuai keinginan.
 4. Tekan **Commit changes** → isi kotak "Update konten.json" → **Commit changes**.
 5. Tunggu ±1 menit, buka websitenya lagi → teks sudah berubah.
 
 > Format isi `konten.json`:
 > - `nama`, `role`, `tagline`, `bio`, `lokasi` — profil.
-> - `kontak.email` / `kontak.wa` — kosongkan (`""`) kalau belum ingin muncul.
-> - `karya.Desain` dan `karya.Fotografi` — daftar karya:
->   `{ "file", "judul", "tag" }` = file gambar, judul, dan label kategori.
+> - `angka1`, `angka1Lb`, `angka2`, `angka2Lb` — statistik di section Tentang.
+> - `kontak.email` / `kontak.wa` / `kontak.linkedin` / `kontak.behance` — kosongkan (`""`) kalau belum ingin muncul.
+> - `pengalaman` — array riwayat kerja: `{ "posisi", "perusahaan", "periode", "lokasi", "deskripsi" }`
+> - `pendidikan` — array riwayat pendidikan: `{ "institusi", "gelar", "ipk" / "nilai", "periode" }`
+> - `achievements` — array string prestasi/penghargaan.
+> - `skills` — object dengan kategori: `production`, `design`, `soft`.
+> - `karya` — daftar karya per kategori (Filmography, Desain Grafis, Video Production):
+>   `{ "file", "judul", "tag", "year", "desc", "isCategory" }`
+>     - `isCategory: true` = item pertama sebagai cover kategori.
 >     - Tambah karya = salin satu baris `{...},` lalu ubah isinya.
 >     - Kurangi karya = hapus barisnya.
 >     - **Perhatian:** baris terakhir dalam daftar TIDAK boleh pakai koma setelahnya.
 
 ## 2. Menambah / mengganti GAMBAR
 
-1. Buka folder `assets/foto` atau `assets/desain`.
+1. Buka folder `assets/desain` (foto sudah dihapus).
 2. **Add file → Upload files** → pilih gambar → **Commit changes**.
-3. Buka `konten.json` → tambahkan `"file": "assets/foto/namagambar.jpg"` ke karya yang mau memakai gambar itu.
+3. Buka `konten.json` → tambahkan `"file": "assets/desain/namagambar.jpg"` ke karya yang mau memakai gambar itu.
 4. Commit (langkah sama seperti bagian 1).
 
 > Tips: sembunyikan karya sementara = hapus barisnya dari `konten.json`, bukan hapus gambarnya.
@@ -71,3 +77,14 @@ Ubah kode warna di belakang `#` untuk mengganti tema. (Biasanya tidak perlu.)
 - Semua isi website ada di file statis — tidak ada basis data yang bisa di-hack kontennya.
 - HTTPS aktif otomatis oleh GitHub (bagian dari kemudahan "public domain").
 - Kalau gambar berat, upload versi kompres (maks lebar 1.400 px) supaya tetap cepat.
+
+---
+
+## Struktur Karya (Baru)
+
+- **Filmography** (Cover: Karya Desain 6 → "Filmography")
+  - Klik → membuka: Behind the Sea, Heaven Pass, Film Project 3
+- **Desain Grafis** (Cover: Karya Desain 9 → "Graphic Design Portfolio")
+  - Klik → membuka: Social Media Content 1, 2, Brand Design, Motion Graphics
+- **Video Production** (Cover: Karya Desain 8 → "Video Production")
+  - Klik → membuka: Fixinema Podcast Series, WKWK Project Content

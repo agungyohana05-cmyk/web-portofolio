@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#00296B">
-<meta name="description" content="Portofolio desainer & fotografer">
-<title>Agung Yohana — Desainer & Fotografer</title>
+<meta name="description" content="Portofolio Filmmaker & Designer — I Gede Agung Yohana Dharma">
+<title>I Gede Agung Yohana Dharma — Filmmaker & Designer</title>
 <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%2300296B"/><text y=".9em" font-size="70" fill="%23F0D000">Y</text></svg>'>
 <style>
   :root{
@@ -122,6 +122,11 @@
     <a href="#beranda">Beranda</a>
     <a href="#tentang">Tentang</a>
     <a href="#karya">Karya</a>
+    <a href="#pengalaman">Pengalaman</a>
+    <a href="#pendidikan">Pendidikan</a>
+    <a href="#organisasi">Organisasi</a>
+    <a href="#achievements">Prestasi</a>
+    <a href="#skills">Keahlian</a>
     <a href="#kontak">Kontak</a>
   </div>
   <button class="burger" id="burger" aria-label="menu">☰</button>
@@ -134,7 +139,7 @@
     <h1><span data-t="nama"></span><br><span class="yel" data-t="role"></span></h1>
     <p class="role" data-t="roleKecil" hidden></p>
     <p data-t="tagline"></p>
-    <div class="chips"><span class="chip">Desain Grafis</span><span class="chip">Fotografi</span><span class="chip" data-t="lokasi"></span></div>
+    <div class="chips"><span class="chip">Filmmaker</span><span class="chip">Designer</span><span class="chip" data-t="lokasi"></span></div>
     <a class="cta" href="#karya" style="margin-top:30px">Lihat Karya ↓</a>
   </div>
 </section>
@@ -149,13 +154,12 @@
       <div class="tentang reveal" data-t="bioHtml"></div>
     </div>
     <div>
-      <span class="k">Keahlian</span>
-      <h2 class="sec" id="secSkill">Bidang kerja</h2>
+      <span class="k">Statistik</span>
+      <h2 class="sec" id="secSkill">Capaian</h2>
       <div class="stat reveal">
         <div><b data-t="angka1">15+</b><span data-t="angka1Lb">Karya Desain</span></div>
         <div><b data-t="angka2">5</b><span data-t="angka2Lb">Karya Foto</span></div>
       </div>
-      <ul class="skill reveal" id="skillList" style="margin-top:24px"></ul>
     </div>
   </div>
 </section>
@@ -170,16 +174,55 @@
   </div>
 </section>
 
+<section id="pengalaman" style="background:linear-gradient(180deg,var(--navy) 0%,#04184d 100%)">
+  <div class="wrap">
+    <span class="k">Pengalaman</span>
+    <h2 class="sec">Riwayat <span style="color:var(--yellow)">Kerja</span></h2>
+    <div id="pengalamanList"></div>
+  </div>
+</section>
+
+<section id="pendidikan" style="background:var(--navy)">
+  <div class="wrap">
+    <span class="k">Pendidikan</span>
+    <h2 class="sec">Riwayat <span style="color:var(--yellow)">Pendidikan</span></h2>
+    <div id="pendidikanList"></div>
+  </div>
+</section>
+
+<section id="organisasi" style="background:linear-gradient(180deg,var(--navy) 0%,#04184d 100%)">
+  <div class="wrap">
+    <span class="k">Organisasi</span>
+    <h2 class="sec">Pengalaman <span style="color:var(--yellow)">Organisasi</span></h2>
+    <div id="organisasiList"></div>
+  </div>
+</section>
+
+<section id="achievements" style="background:linear-gradient(180deg,var(--navy) 0%,#04184d 100%)">
+  <div class="wrap">
+    <span class="k">Prestasi</span>
+    <h2 class="sec">Achievement & <span style="color:var(--yellow)">Penghargaan</span></h2>
+    <ul id="achievementList" style="list-style:none;display:grid;gap:16px"></ul>
+  </div>
+</section>
+
+<section id="skills" style="background:var(--navy)">
+  <div class="wrap">
+    <span class="k">Keahlian</span>
+    <h2 class="sec">Skill & <span style="color:var(--yellow)">Expertise</span></h2>
+    <div id="skillsContainer"></div>
+  </div>
+</section>
+
 <section class="kontak" id="kontak">
   <div class="wrap">
     <span class="k">Kontak</span>
     <h2 class="sec">Mari <span style="color:var(--yellow)">berkolaborasi</span></h2>
-    <p class="sub" data-t="bio"></p>
     <div class="kbtns" id="kontakBtns"></div>
   </div>
 </section>
 
-<footer><div class="wrap">© <span id="tahun"></span> <b data-t="nama"></b> — Desainer & Fotografer. Dibuat dengan tema <b>biru & kuning</b>.</div></footer>
+<footer><div class="wrap">© <span id="tahun"></span> <b data-t="nama"></b> — Filmmaker & Designer. Dibuat dengan tema <b>biru & kuning</b>.</div></footer>
 
 <div class="lb" id="lb"><button class="x" id="lbX">✕</button><img id="lbImg" alt="karya"><div class="cap" id="lbCap"></div><button class="nav prev" id="lbPrev">‹</button><button class="nav next" id="lbNext">›</button></div>
 <div class="toast" id="toast"></div>
@@ -187,17 +230,59 @@
 <script>
 /* ====== DATA CADANGAN (fallback bila konten.json tidak terbaca) ====== */
 const DEFAULT = {
-  nama:"Agung Yohana", role:"Desainer & Fotografer",
-  lokasi:"Yogyakarta, Indonesia",
-  tagline:"Mengubah ide menjadi visual — dari desain grafis sampai cerita lewat lensa.",
-  bio:"Kreator visual asal Yogyakarta. Fokus pada desain grafis, tipografi, dan fotografi.",
-  kontak:{ email:"", wa:"", github:"agungyohana05-cmyk" },
-  karya:{ Desain:[
-    {file:"assets/desain/artboard-1-copy.jpg",judul:"Karya Desain 01",tag:"Desain Grafis"},
-    {file:"assets/desain/artboard-1.jpg",judul:"Karya Desain 02",tag:"Desain Grafis"}
-  ], Fotografi:[
-    {file:"assets/foto/alf03994.jpg",judul:"Fotografi 01",tag:"Lanskap"}
-  ]}
+  nama:"I Gede Agung Yohana Dharma", role:"Filmmaker & Designer",
+  lokasi:"Bali, Indonesia",
+  tagline:"Multidisciplinary film and digital content producer with 2+ years experience in video production, directing, and creative content management.",
+  bio:"Film and Television graduate from Indonesian Institute of The Arts Yogyakarta with experience leading video production for YouTube channels (300K+ views), directing short and documentary films, and managing creative content.\n\nServed as Production Manager at Fixinema Media and Production Assistant at WKWK Project by Genflix (2M subscribers). Experienced in writing, directing, producing, graphic design, and festival programming.",
+  angka1:"30+", angka1Lb:"Video Projects",
+  angka2:"300K+", angka2Lb:"Total Views",
+  kontak:{ email:"agungyohana05@gmail.com", wa:"6289682465080", linkedin:"linkedin.com/in/agungyohana", behance:"https://www.behance.net/gallery/247136419/PORTOFOLIO-2026" },
+  pengalaman:[
+    {posisi:"Production Assistant",perusahaan:"WKWK Project By Genflix",periode:"Oct 2024 - Jan 2025",lokasi:"Jakarta",deskripsi:"A YouTube-based podcast and entertainment channel under Genflix, producing talk shows and creative video content featuring public figures and industry professionals, with a large national audience. Assisted the production team for WKWK Project by Genflix, a YouTube channel with nearly 2 million subscribers. Contributed to the production of 20+ podcast videos, supporting videography, photography, and editing processes. Worked on podcast, in-house content, and inter-company collaboration projects. Served as Prop Master for a Bank Sinarmas campaign video. Handled hundreds of documentation photographs for social events, internal company activities, and ceremonial events."},
+    {posisi:"YouTube Production Manager",perusahaan:"Fixinema Media Creative",periode:"Aug 2023 - May 2024",lokasi:"Yogyakarta",deskripsi:"Creative media production company specializing in film-related content, videography, photography, social media content, and audiovisual production for brands and creative projects. Created and developed a company YouTube channel focused on film and creative industries. Managed end-to-end content production: idea development, content planning, and execution. Produced 30 film podcast videos featuring Indonesian film industry professionals. Created 30+ Instagram carousel posts related to film knowledge and industry insights. Developed dozens of educational film videos. Achieved 300,000 total YouTube views and 3,500 watch hours within one year."},
+    {posisi:"Graphic Designer",perusahaan:"Reka Visual Studio",periode:"Jul 2021 - Aug 2022",lokasi:"Denpasar",deskripsi:"Creative agency focusing on visual communication, graphic design, motion graphics, and digital content production for corporate and commercial needs. Worked in a flexible arrangement (remote and on-site) supporting social media content production for in-house and client companies. Produced 50+ social media contents including stories, vertical videos, and graphic posts, involved from asset preparation to final delivery. Created various content formats such as graphic design and motion graphics. Assisted in photo and video production for client social media content. Utilized industry-standard tools: Adobe Photoshop, Illustrator, After Effects, and Premiere Pro."},
+    {posisi:"Internship Graphic Designer",perusahaan:"Ganeshcom Studio",periode:"Jan 2021 - May 2021",lokasi:"Denpasar",deskripsi:"Information technology company providing application and software development services, with a dedicated content and creative division supporting digital products and corporate communication. Created 2D graphic designs and 2D motion graphics for company and client social media content. Produced graphic assets using Adobe Photoshop and Adobe Illustrator, and animated motion graphics using Adobe After Effects. Contributed to the production of one 2D motion graphic video for the company profile. Produced 10+ graphic contents in the form of Instagram Reels, posts, and stories. Assisted in developing graphic design materials for the company profile during the internship period."}
+  ],
+  organisasi:[
+    {posisi:"Film Programmer",organisasi:"Kamisinema",periode:"Sep 2022 - Dec 2023",lokasi:"Yogyakarta",deskripsi:"A film appreciation and screening organization at the Faculty of Recorded Media, Indonesian Institute of the Arts (ISI) Yogyakarta, focused on film exhibition, discussion, and audiovisual literacy. Organized regular film screenings held weekly or monthly, featuring one feature film or 3–6 short films per session. Curated short and feature films through internal archives and external scouting processes. Prepared and coordinated post-screening discussion and Q&A sessions. Served as Moderator, facilitating discussions and guiding audience Q&A with speakers and filmmakers."},
+    {posisi:"Programmer",organisasi:"Sewon Screening",periode:"Sep 2022 - Sep 2023",lokasi:"Yogyakarta",deskripsi:"Sewon Screening is an international campus film festival organized by the Indonesian Institute of the Arts (ISI) Yogyakarta students, focusing on film exhibition, curation, discussion, and audiovisual literacy, held annually for one week. Served as a Film Programmer, responsible for curating 300+ short films through open calls and scouting processes. Selected and developed two international feature film programs for public screenings. Initiated and curated an inclusive film program highlighting diverse perspectives and accessibility. Developed a film archive education program to introduce archival practices and film literacy. Organized and coordinated discussion programs with filmmakers and film professionals on various topics. Collaborated with internal teams to ensure screening schedules, program coherence, and audience engagement."}
+  ],
+  pendidikan:[
+    {institusi:"Indonesian Institute of The Arts Yogyakarta",gelar:"Bachelor of Film and Television",ipk:"3.50/4.00",periode:"Aug 2022 - Feb 2027",detail:"Consistently produced short films as semester-end projects. Served as Writer in 3 films, Director in 2 films, and Producer in 1 film. Produced 2 documentary films, one of which, Behind the Sea, received approximately USD 1,000 in funding from the National Research Agency. Created 3 short fiction films, several of which were selected for national-scale screenings. Currently developing one feature-length screenplay as a final project."},
+    {institusi:"SMK Negeri 1 Denpasar",gelar:"High School Diploma in Multimedia",nilai:"82.00/100.00",periode:"Jul 2019 - Jun 2022",detail:"Actively involved in a cinema organization producing short films and audiovisual works, with at least one production each semester. Completed formal studies in design, audio-visual production, and basic computer and networking fundamentals."}
+  ],
+  achievements:[
+    "Student Award Jury Member - Jogja-Netpac Asian Film Festival 2022",
+    "Received approximately USD 1,000 in funding from the National Research Agency for a short film titled Behind the Sea (2024)",
+    "Wrote a short film titled Heaven Pass, which was officially screened at a national-level film festival, the Bandung International Student Film Festival (2024)",
+    "Film Programmer at Sewon Screening - curated 300+ short films for international campus film festival"
+  ],
+  skills:{
+    production:["Directing","Videography","Video Editing","Writing","Producing"],
+    design:["Graphic Design","2D Motion Graphics","Adobe Photoshop","Adobe Illustrator","Adobe After Effects","Adobe Premiere Pro"],
+    soft:["Leadership","Communication","Research Skills","Time Management"],
+    language:["Indonesia","English"]
+  },
+  karya:{
+    Filmography:[
+      {file:"assets/desain/artboard-2.jpg",judul:"Filmography",tag:"Film Portfolio",isCategory:true},
+      {file:"assets/desain/artboard-2-1.jpg",judul:"Behind the Sea",tag:"Documentary Film",year:"2024"},
+      {file:"assets/desain/artboard-2-copy.jpg",judul:"Heaven Pass",tag:"Short Fiction Film",year:"2024"},
+      {file:"assets/desain/artboard-3.jpg",judul:"Film Project 3",tag:"Short Film",year:"2023"}
+    ],
+    "Desain Grafis":[
+      {file:"assets/desain/artboard-4.jpg",judul:"Graphic Design Portfolio",tag:"Design Works",isCategory:true},
+      {file:"assets/desain/artboard-5-copy.jpg",judul:"Social Media Content 1",tag:"Digital Design",year:"2024"},
+      {file:"assets/desain/artboard-5.jpg",judul:"Social Media Content 2",tag:"Digital Design",year:"2024"},
+      {file:"assets/desain/artboard-6.jpg",judul:"Brand Design",tag:"Graphic Design",year:"2023"},
+      {file:"assets/desain/artboard-7.jpg",judul:"Motion Graphics",tag:"2D Animation",year:"2023"}
+    ],
+    "Video Production":[
+      {file:"assets/desain/artboard-4-copy.jpg",judul:"Video Production",tag:"Production Portfolio",isCategory:true},
+      {file:"assets/desain/artboard-8.jpg",judul:"Fixinema Podcast Series",tag:"YouTube Content",year:"2023-2024",desc:"30 episodes, 300K+ views"},
+      {file:"assets/desain/artboard-9.jpg",judul:"WKWK Project Content",tag:"Podcast Production",year:"2024-2025",desc:"20+ episodes for 2M subscriber channel"}
+    ]
+  }
 };
 
 let B = DEFAULT, WORKS = [], LBOX = [], LBI = 0, CAT = null;
@@ -223,12 +308,16 @@ function build(){
   document.title=B.nama+" — "+B.role;
   $("#tahun").textContent=new Date().getFullYear();
   $("#band").innerHTML=Array.from({length:6}).fill(B.role+"&nbsp;&nbsp;•&nbsp;&nbsp;"+B.nama+"&nbsp;&nbsp;•&nbsp;&nbsp;").join("");
-  $("#skillList").innerHTML=["Desain Grafis","Tipografi & Layout","Fotografi Lanskap","Editing & Retouch"].map(s=>"<li>"+s+"</li>").join("");
   const cats=Object.keys(B.karya||{});
   $("#tabs").innerHTML=cats.map((c,i)=>'<button class="tab'+(i===0?" on":"")+'" data-cat="'+esc(c)+'">'+esc(c)+"</button>").join("");
   $("#tabs").querySelectorAll(".tab").forEach(t=>t.onclick=()=>{CAT=t.getAttribute("data-cat");setCat();});
   CAT=cats[0]; setCat();
   renderKontak();
+  renderPengalaman();
+  renderPendidikan();
+  renderOrganisasi();
+  renderAchievements();
+  renderSkills();
   bindReveal();
 }
 
@@ -249,9 +338,47 @@ function renderKontak(){
   let h="";
   if(d.wa) h+='<a class="kbtn" href="https://wa.me/'+esc(String(d.wa).replace(/[^\d]/g,""))+'">WhatsApp</a>';
   if(d.email) h+='<a class="kbtn" href="mailto:'+esc(d.email)+'">Email</a>';
-  if(d.github) h+='<a class="kbtn gh" target="_blank" rel="noopener" href="https://github.com/'+esc(d.github)+'">GitHub ↗</a>';
-  if(!h) h='<span style="color:var(--mut)">Isi email/WA di konten.json — lihat PANDUAN-EDIT.md</span>';
+  if(d.linkedin) h+='<a class="kbtn gh" target="_blank" rel="noopener" href="https://'+esc(d.linkedin)+'">LinkedIn ↗</a>';
+  if(d.behance) h+='<a class="kbtn gh" target="_blank" rel="noopener" href="'+esc(d.behance)+'">Behance ↗</a>';
+  if(!h) h='<span style="color:var(--mut)">Isi kontak di konten.json</span>';
   $("#kontakBtns").innerHTML=h;
+}
+
+function renderPengalaman(){
+  const list=B.pengalaman||[];
+  const html=list.map(p=>'<div class="reveal" style="background:rgba(0,80,157,.35);border:1px solid rgba(240,208,0,.18);padding:24px;border-radius:10px;margin-bottom:16px"><div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:8px"><b style="font-size:18px">'+esc(p.posisi)+'</b><span style="color:var(--yellow);font-size:13px">'+esc(p.periode)+'</span></div><div style="color:var(--mut);font-size:14px;margin-bottom:4px">'+esc(p.perusahaan)+' · '+esc(p.lokasi)+'</div><p style="color:#E6EDFA;font-size:15px;margin-top:12px">'+esc(p.deskripsi)+'</p></div>').join("");
+  $("#pengalamanList").innerHTML=html;
+}
+
+function renderPendidikan(){
+  const list=B.pendidikan||[];
+  const html=list.map(p=>'<div class="reveal" style="background:rgba(0,80,157,.35);border:1px solid rgba(240,208,0,.18);padding:24px;border-radius:10px;margin-bottom:16px"><b style="font-size:18px">'+esc(p.gelar)+'</b><div style="color:var(--mut);font-size:14px;margin:4px 0">'+esc(p.institusi)+' · '+esc(p.periode)+'</div>'+(p.ipk?'<div style="color:var(--yellow);font-size:14px">IPK: '+esc(p.ipk)+'</div>':'')+(p.nilai?'<div style="color:var(--yellow);font-size:14px">Nilai: '+esc(p.nilai)+'</div>':'')+(p.detail?'<p style="color:#E6EDFA;font-size:15px;margin-top:12px">'+esc(p.detail)+'</p>':'')+'</div>').join("");
+  $("#pendidikanList").innerHTML=html;
+}
+
+function renderOrganisasi(){
+  const list=B.organisasi||[];
+  const html=list.map(o=>'<div class="reveal" style="background:rgba(0,80,157,.35);border:1px solid rgba(240,208,0,.18);padding:24px;border-radius:10px;margin-bottom:16px"><div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:8px"><b style="font-size:18px">'+esc(o.posisi)+'</b><span style="color:var(--yellow);font-size:13px">'+esc(o.periode)+'</span></div><div style="color:var(--mut);font-size:14px;margin-bottom:4px">'+esc(o.organisasi)+' · '+esc(o.lokasi)+'</div><p style="color:#E6EDFA;font-size:15px;margin-top:12px">'+esc(o.deskripsi)+'</p></div>').join("");
+  $("#organisasiList").innerHTML=html;
+}
+
+function renderAchievements(){
+  const list=B.achievements||[];
+  const html=list.map(a=>'<li class="reveal" style="background:rgba(0,80,157,.35);border:1px solid rgba(240,208,0,.18);padding:16px 20px;border-radius:8px;display:flex;align-items:flex-start;gap:12px"><span style="color:var(--yellow);font-size:18px;flex-shrink:0">●</span><span style="color:#E6EDFA;font-size:15px;line-height:1.6">'+esc(a)+'</span></li>').join("");
+  $("#achievementList").innerHTML=html;
+}
+
+function renderSkills(){
+  const s=B.skills||{};
+  const order=["production","design","soft","language"];
+  const labels={"production":"Production","design":"Design","soft":"Soft Skills","language":"Language"};
+  let html="";
+  order.forEach(key=>{
+    if(s[key]&&s[key].length){
+      html+='<div class="reveal" style="margin-bottom:24px"><h3 style="color:var(--yellow);font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px">'+labels[key]+'</h3><div style="display:flex;flex-wrap:wrap;gap:10px">'+s[key].map(sk=>'<span style="background:rgba(0,80,157,.35);border:1px solid rgba(240,208,0,.18);padding:8px 16px;border-radius:6px;font-size:13px">'+esc(sk)+'</span>').join("")+'</div></div>';
+    }
+  });
+  $("#skillsContainer").innerHTML=html;
 }
 
 function openLb(i){
