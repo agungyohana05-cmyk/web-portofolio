@@ -4,13 +4,14 @@ Fokus: kamu bisa mengubah isi website ini **sendiri lewat browser GitHub** —
 tidak perlu terminal, tidak perlu bot/AI. Hosting (GitHub Pages) otomatis
 memperbarui website setiap kamu menyimpan perubahan.
 
-> Alamat web: `https://{username}.github.io/web-portofolio/`
+> Alamat web: `https://agungyohana05-cmyk.github.io/web-portofolio/`
+> Repository: `github.com/agungyohana05-cmyk/web-portofolio`
 
 ---
 
 ## 1. Mengubah TEKS (nama, bio, kontak, judul karya)
 
-1. Buka `github.com/{username}/web-portofolio`.
+1. Buka `github.com/agungyohana05-cmyk/web-portofolio`.
 2. Klik file **`konten.json`** → tombol **edit (pensil)** di kanan atas.
 3. Ubah teks di dalam tanda kutip `"..."` — JANGAN sampai menghapus koma.
    Contoh: `"nama": "Agung Yohana"` → ganti sesuai keinginan.
@@ -47,7 +48,7 @@ Ubah kode warna di belakang `#` untuk mengganti tema. (Biasanya tidak perlu.)
 ## 4. Custom domain (nanti, kalau mau)
 
 1. Beli domain (mis. dari `niagahoster.co.id`, `idwebhost`, dll).
-2. Buka `github.com/{username}/web-portofolio` → **Settings → Pages**.
+2. Buka `github.com/agungyohana05-cmyk/web-portofolio` → **Settings → Pages**.
 3. Isi **Custom domain** dengan nama domainmu → Save.
 4. Di panel domain (registrar), tambahkan CNAME/records mengikuti petunjuk yang
    ditampilkan GitHub (misal 4 record A `185.199.108.153` dst & TXT `_github-pages-challenge`).
