@@ -86,23 +86,26 @@
     "production": ["Directing", "Videography", "Video Editing", "Writing", "Producing"],
     "design": ["Graphic Design", "2D Motion Graphics", "Adobe Photoshop", "Adobe Illustrator", "Adobe After Effects", "Adobe Premiere Pro"],
     "soft": ["Leadership", "Communication", "Research Skills", "Time Management"],
-    "language": ["Indonesia", "English"]
+    "language": ["Indonesian", "English"]
   },
   "karya": {
     "Filmography": [
+      { "file": "assets/desain/artboard-2.jpg", "judul": "Filmography", "tag": "Film Portfolio", "isCategory": true },
       { "file": "assets/desain/artboard-2-1.jpg", "judul": "Behind the Sea", "tag": "Documentary Film", "year": "2024" },
       { "file": "assets/desain/artboard-2-copy.jpg", "judul": "Heaven Pass", "tag": "Short Fiction Film", "year": "2024" },
       { "file": "assets/desain/artboard-3.jpg", "judul": "Film Project", "tag": "Short Film", "year": "2023" }
     ],
-    "Desain Grafis": [
+    "Graphic Design": [
+      { "file": "assets/desain/artboard-4.jpg", "judul": "Graphic Design Portfolio", "tag": "Design Works", "isCategory": true },
       { "file": "assets/desain/artboard-5-copy.jpg", "judul": "Social Media Content", "tag": "Digital Design", "year": "2024" },
       { "file": "assets/desain/artboard-5.jpg", "judul": "Social Media Content", "tag": "Graphic Design", "year": "2024" },
       { "file": "assets/desain/artboard-6.jpg", "judul": "Social Media Content", "tag": "Graphic Design", "year": "2023" },
       { "file": "assets/desain/artboard-7.jpg", "judul": "Social Media Content", "tag": "Graphic Design", "year": "2023" }
     ],
     "Video Production": [
-      { "file": "assets/desain/artboard-9.jpg", "judul": "Fixinema Podcast Series", "tag": "Podcast Production & Youtube Content", "year": "2024-2025", "desc": "20+ episodes for 2M subscriber channel" },
-      { "file": "assets/desain/artboard-8.jpg", "judul": "WKWK Project Content", "tag": "Podcast Production & Youtube Content", "year": "2023-2024", "desc": "30 episodes, 300K+ views" }
+      { "file": "assets/desain/artboard-4-copy.jpg", "judul": "Video Production", "tag": "Production Portfolio", "isCategory": true },
+      { "file": "assets/desain/artboard-9.jpg", "judul": "Fixinema Podcast Series", "tag": "Podcast Production & YouTube Content", "year": "2024-2025", "desc": "20+ episodes for 2M subscriber channel" },
+      { "file": "assets/desain/artboard-8.jpg", "judul": "WKWK Project Content", "tag": "Podcast Production & YouTube Content", "year": "2023-2024", "desc": "30 episodes, 300K+ views" }
     ]
   }
 }

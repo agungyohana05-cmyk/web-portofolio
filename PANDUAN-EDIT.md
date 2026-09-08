@@ -1,90 +1,110 @@
-# PANDUAN EDIT & MAINTAIN WEB PORTOFOLIO — tanpa bot / tanpa kode
+# PORTFOLIO WEBSITE EDIT & MAINTAIN GUIDE — No Code / No Bot Required
 
-Fokus: kamu bisa mengubah isi website ini **sendiri lewat browser GitHub** —
-tidak perlu terminal, tidak perlu bot/AI. Hosting (GitHub Pages) otomatis
-memperbarui website setiap kamu menyimpan perubahan.
+Focus: You can update this website yourself via **GitHub browser** — no terminal, no AI/bot needed. GitHub Pages auto-deploys on every commit.
 
-> Alamat web: `https://agungyohana05-cmyk.github.io/web-portofolio/`
+> Live URL: `https://agungyohana05-cmyk.github.io/web-portofolio/`
 > Repository: `github.com/agungyohana05-cmyk/web-portofolio`
 
 ---
 
-## 1. Mengubah TEKS (nama, bio, kontak, judul karya, pengalaman, pendidikan, achievement)
+## 1. Edit TEXT (name, bio, contact, project titles, experience, education, achievements)
 
-1. Buka `github.com/agungyohana05-cmyk/web-portofolio`.
-2. Klik file **`konten.json`** → tombol **edit (pensil)** di kanan atas.
-3. Ubah teks di dalam tanda kutip `"..."` — JANGAN sampai menghapus koma.
-   Contoh: `"nama": "I Gede Agung Yohana Dharma"` → ganti sesuai keinginan.
-4. Tekan **Commit changes** → isi kotak "Update konten.json" → **Commit changes**.
-5. Tunggu ±1 menit, buka websitenya lagi → teks sudah berubah.
+1. Open `github.com/agungyohana05-cmyk/web-portofolio`.
+2. Click **`konten.json`** → **Edit (pencil icon)** top right.
+3. Edit text inside quotes `"..."` — **don't remove commas**.
+   Example: `"nama": "I Gede Agung Yohana Dharma"` → change as needed.
+4. Click **Commit changes** → fill "Update konten.json" → **Commit changes**.
+5. Wait ~1 minute, refresh site → changes live.
 
-> Format isi `konten.json`:
-> - `nama`, `role`, `tagline`, `bio`, `lokasi` — profil.
-> - `angka1`, `angka1Lb`, `angka2`, `angka2Lb` — statistik di section Tentang.
-> - `kontak.email` / `kontak.wa` / `kontak.linkedin` / `kontak.behance` — kosongkan (`""`) kalau belum ingin muncul.
-> - `pengalaman` — array riwayat kerja: `{ "posisi", "perusahaan", "periode", "lokasi", "deskripsi" }`
-> - `pendidikan` — array riwayat pendidikan: `{ "institusi", "gelar", "ipk" / "nilai", "periode" }`
-> - `achievements` — array string prestasi/penghargaan.
-> - `skills` — object dengan kategori: `production`, `design`, `soft`.
-> - `karya` — daftar karya per kategori (Filmography, Desain Grafis, Video Production):
+> `konten.json` structure:
+> - `nama`, `role`, `tagline`, `bio`, `lokasi` — profile.
+> - `angka1`, `angka1Lb`, `angka2`, `angka2Lb` — stats in About section.
+> - `kontak.email` / `kontak.wa` / `kontak.linkedin` / `kontak.behance` — leave empty (`""`) to hide.
+> - `pengalaman` — work history array: `{ "posisi", "perusahaan", "periode", "lokasi", "deskripsi" }`
+> - `organisasi` — organization experience: `{ "posisi", "organisasi", "periode", "lokasi", "deskripsi" }`
+> - `pendidikan` — education array: `{ "institusi", "gelar", "ipk" / "nilai", "periode", "detail" }`
+> - `achievements` — array of achievement strings.
+> - `skills` — object with categories: `production`, `design`, `soft`, `language`.
+> - `karya` — projects per category (Filmography, Graphic Design, Video Production):
 >   `{ "file", "judul", "tag", "year", "desc", "isCategory" }`
->     - `isCategory: true` = item pertama sebagai cover kategori.
->     - Tambah karya = salin satu baris `{...},` lalu ubah isinya.
->     - Kurangi karya = hapus barisnya.
->     - **Perhatian:** baris terakhir dalam daftar TIDAK boleh pakai koma setelahnya.
+>   - `isCategory: true` = first item as category cover.
+>   - Add project = copy a `{...},` line and edit.
+>   - Remove project = delete its line.
+>   - **Important:** Last item in each array MUST NOT have a trailing comma.
 
-## 2. Menambah / mengganti GAMBAR
+---
 
-1. Buka folder `assets/desain` (foto sudah dihapus).
-2. **Add file → Upload files** → pilih gambar → **Commit changes**.
-3. Buka `konten.json` → tambahkan `"file": "assets/desain/namagambar.jpg"` ke karya yang mau memakai gambar itu.
-4. Commit (langkah sama seperti bagian 1).
+## 2. Add / Replace IMAGES
 
-> Tips: sembunyikan karya sementara = hapus barisnya dari `konten.json`, bukan hapus gambarnya.
-> Gambar yang sudah dipakai tidak akan mendistribusikan ulang.
+1. Open folder `assets/desain` (photography folder removed).
+2. **Add file → Upload files** → select image → **Commit changes**.
+3. Open `konten.json` → add `"file": "assets/desain/your-image.jpg"` to the project using it.
+4. Commit (same as step 1).
 
-## 3. Mengubah WARNA / tema (ada di `index.html`)
+> Tip: Hide project temporarily = remove its line from `konten.json`, don't delete the image.
+> Used images won't be re-distributed.
 
-Bagian paling atas file `index.html` ada blok `:root`:
+---
+
+## 3. Change COLORS / Theme (in `index.html`)
+
+Top of `index.html` has `:root` block:
 ```
 --navy:#00296B;  --blue:#00509D;  --yellow:#F0D000;
 ```
-Ubah kode warna di belakang `#` untuk mengganti tema. (Biasanya tidak perlu.)
+Change hex codes after `#` to re-theme. (Usually not needed.)
 
-## 4. Custom domain (nanti, kalau mau)
+---
 
-1. Beli domain (mis. dari `niagahoster.co.id`, `idwebhost`, dll).
-2. Buka `github.com/agungyohana05-cmyk/web-portofolio` → **Settings → Pages**.
-3. Isi **Custom domain** dengan nama domainmu → Save.
-4. Di panel domain (registrar), tambahkan CNAME/records mengikuti petunjuk yang
-   ditampilkan GitHub (misal 4 record A `185.199.108.153` dst & TXT `_github-pages-challenge`).
-5. Aktifkan **Enforce HTTPS**.
+## 4. Custom Domain (Optional)
 
-## 5. Kembalikan website (jika rusak/menghilang)
+1. Buy domain (e.g., `niagahoster.co.id`, `idwebhost`, etc).
+2. Open `github.com/agungyohana05-cmyk/web-portofolio` → **Settings → Pages**.
+3. Fill **Custom domain** with your domain → Save.
+4. In your domain registrar panel, add CNAME/records as GitHub instructs
+   (e.g., 4 A records `185.199.108.153` etc & TXT `_github-pages-challenge`).
+5. Enable **Enforce HTTPS**.
 
-- Isi asli tersedia di `konten.json` versi lama: GitHub **History** file ini → pilih versi → Restore.
-- Seluruh source juga ada di folder lokal:
+---
+
+## 5. Restore Website (If Broken / Missing)
+
+- Original content in `konten.json` history: GitHub **History** on this file → pick version → Restore.
+- Full source also in local folder:
   `MONEY GROWTH/website builder business/demo/PORTOFOLIO/`.
 
-## 6. Menghapus / menghentikan website
+---
 
-- Nonaktifkan: GitHub **Settings → Pages → unpublish** (website hilang, file tetap ada).
-- Hapus total: **Settings → Danger Zone → Delete this repository**.
+## 6. Disable / Delete Website
+
+- Disable: GitHub **Settings → Pages → unpublish** (site down, files remain).
+- Delete: **Settings → Danger Zone → Delete this repository**.
 
 ---
 
-## Catatan keamanan & kualitas
-- Semua isi website ada di file statis — tidak ada basis data yang bisa di-hack kontennya.
-- HTTPS aktif otomatis oleh GitHub (bagian dari kemudahan "public domain").
-- Kalau gambar berat, upload versi kompres (maks lebar 1.400 px) supaya tetap cepat.
+## Security & Quality Notes
+- All site content is static files — no database to hack.
+- HTTPS auto-enabled by GitHub (part of "public domain" convenience).
+- If images are heavy, upload compressed versions (max width 1,400 px) for speed.
 
 ---
 
-## Struktur Karya (Baru)
+## Portfolio Structure (Current)
 
-- **Filmography** (Cover: Karya Desain 6 → "Filmography")
-  - Klik → membuka: Behind the Sea, Heaven Pass, Film Project 3
-- **Desain Grafis** (Cover: Karya Desain 9 → "Graphic Design Portfolio")
-  - Klik → membuka: Social Media Content 1, 2, Brand Design, Motion Graphics
-- **Video Production** (Cover: Karya Desain 8 → "Video Production")
-  - Klik → membuka: Fixinema Podcast Series, WKWK Project Content
+- **Filmography** (Cover: `artboard-2.jpg` → "Filmography")
+  - Click → opens: Behind the Sea, Heaven Pass, Film Project
+- **Graphic Design** (Cover: `artboard-4.jpg` → "Graphic Design Portfolio")
+  - Click → opens: Social Media Content (4 items)
+- **Video Production** (Cover: `artboard-4-copy.jpg` → "Video Production")
+  - Click → opens: Fixinema Podcast Series, WKWK Project Content
+
+---
+
+## Local Development (Preview Before Push)
+
+```bash
+cd "/Users/yohana/Documents/AI Project/MONEY GROWTH/website builder business/demo/PORTOFOLIO"
+python3 -m http.server 8080
+# Open http://localhost:8080
+```
+**Required** for `fetch("konten.json")` to work (CORS blocks `file://`).

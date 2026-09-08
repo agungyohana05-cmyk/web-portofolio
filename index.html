@@ -4,7 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#00296B">
-<meta name="description" content="Portofolio Filmmaker & Designer — I Gede Agung Yohana Dharma">
+<meta name="description" content="Filmmaker & Designer — I Gede Agung Yohana Dharma. Video production, directing, graphic design.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="I Gede Agung Yohana Dharma — Filmmaker & Designer">
+<meta property="og:description" content="Multidisciplinary film and digital content producer. Portfolio, achievements, and experience.">
+<meta property="og:image" content="https://agungyohana05-cmyk.github.io/web-portofolio/assets/pas-foto.jpg">
+<meta property="og:url" content="https://agungyohana05-cmyk.github.io/web-portofolio/">
+<meta name="twitter:card" content="summary_large_image">
 <title>I Gede Agung Yohana Dharma — Filmmaker & Designer</title>
 <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%2300296B"/><text y=".9em" font-size="70" fill="%23F0D000">Y</text></svg>'>
 <style>
@@ -66,6 +72,9 @@
   ul.skill li{display:flex;align-items:center;gap:10px;background:rgba(0,80,157,.35);border:1px solid rgba(240,208,0,.18);padding:12px 16px;border-radius:8px;font-size:14px}
   ul.skill li::before{content:"";width:8px;height:8px;background:var(--yellow)}
 
+  /* PAS FOTO */
+  .foto{width:min(240px,100%);aspect-ratio:3/4;object-fit:cover;border:3px solid var(--yellow);border-radius:12px;box-shadow:0 18px 50px rgba(0,0,0,.4);margin-bottom:30px}
+
   /* KARYA tabs */
   .tabs{display:flex;gap:10px;margin-bottom:34px;flex-wrap:wrap}
   .tab{background:transparent;border:1px solid rgba(240,208,0,.45);color:var(--yellow);padding:11px 24px;border-radius:99px;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
@@ -117,22 +126,22 @@
 <body>
 
 <header><nav class="wrap">
-  <a class="brand" href="#beranda"><b>Y</b>ohana<span style="color:var(--yellow)">.</span></a>
+  <a class="brand" href="#home"><b>Y</b>ohana<span style="color:var(--yellow)">.</span></a>
   <div class="links" id="menu">
-    <a href="#beranda">Beranda</a>
-    <a href="#tentang">Tentang</a>
-    <a href="#karya">Karya</a>
-    <a href="#pengalaman">Pengalaman</a>
-    <a href="#pendidikan">Pendidikan</a>
-    <a href="#organisasi">Organisasi</a>
-    <a href="#achievements">Prestasi</a>
-    <a href="#skills">Keahlian</a>
-    <a href="#kontak">Kontak</a>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#organization">Organization</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
   </div>
   <button class="burger" id="burger" aria-label="menu">☰</button>
 </nav></header>
 
-<section class="hero" id="beranda">
+<section class="hero" id="home">
   <div class="deco deco-r"></div><div class="deco deco-b"></div><div class="deco deco-l"></div><div class="deco deco-x"></div>
   <div class="wrap">
     <span class="kick" data-t="nama"></span>
@@ -140,89 +149,91 @@
     <p class="role" data-t="roleKecil" hidden></p>
     <p data-t="tagline"></p>
     <div class="chips"><span class="chip">Filmmaker</span><span class="chip">Designer</span><span class="chip" data-t="lokasi"></span></div>
-    <a class="cta" href="#karya" style="margin-top:30px">Lihat Karya ↓</a>
+    <a class="cta" href="#portfolio" style="margin-top:30px">View Portfolio ↓</a>
   </div>
 </section>
 
 <div class="band" id="band"></div>
 
-<section id="tentang">
+<section id="about">
   <div class="wrap cols">
     <div>
-      <span class="k">Tentang</span>
-      <h2 class="sec">Senang berkenalan.<br>Tentang <span style="color:var(--yellow)">saya</span>.</h2>
+      <span class="k">About</span>
+      <h2 class="sec">Nice to meet you.<br>About <span style="color:var(--yellow)">me</span>.</h2>
       <div class="tentang reveal" data-t="bioHtml"></div>
     </div>
     <div>
-      <span class="k">Statistik</span>
-      <h2 class="sec" id="secSkill">Capaian</h2>
+      <img class="foto reveal" src="assets/pas-foto.jpg" alt="I Gede Agung Yohana Dharma">
+      <span class="k">Highlights</span>
+      <h2 class="sec" id="secSkill">Milestones</h2>
       <div class="stat reveal">
-        <div><b data-t="angka1">15+</b><span data-t="angka1Lb">Karya Desain</span></div>
-        <div><b data-t="angka2">5</b><span data-t="angka2Lb">Karya Foto</span></div>
+        <div><b data-t="angka1">50+</b><span data-t="angka1Lb">Video Projects</span></div>
+        <div><b data-t="angka2">300K+</b><span data-t="angka2Lb">Total Views</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="karya" style="background:linear-gradient(180deg,var(--navy) 0%,#04184d 100%)">
+<section id="portfolio" style="background:linear-gradient(180deg,var(--navy) 0%,#04184d 100%)">
   <div class="wrap">
-    <span class="k">Portofolio</span>
-    <h2 class="sec">Karya <span style="color:var(--yellow)">terpilih</span></h2>
-    <p class="sub">Klik gambar untuk melihat lebih besar. Gunakan tab untuk memilih kategori.</p>
+    <span class="k">Portfolio</span>
+    <h2 class="sec">Selected <span style="color:var(--yellow)">Works</span></h2>
+    <p class="sub">Click any project to preview details. Use tabs to filter by creative discipline.</p>
     <div class="tabs" id="tabs"></div>
     <div class="grid" id="grid"></div>
   </div>
 </section>
 
-<section id="pengalaman" style="background:linear-gradient(180deg,var(--navy) 0%,#04184d 100%)">
+<section id="experience" style="background:linear-gradient(180deg,var(--navy) 0%,#04184d 100%)">
   <div class="wrap">
-    <span class="k">Pengalaman</span>
-    <h2 class="sec">Riwayat <span style="color:var(--yellow)">Kerja</span></h2>
+    <span class="k">Career</span>
+    <h2 class="sec">Work <span style="color:var(--yellow)">Experience</span></h2>
     <div id="pengalamanList"></div>
   </div>
 </section>
 
-<section id="pendidikan" style="background:var(--navy)">
+<section id="education" style="background:var(--navy)">
   <div class="wrap">
-    <span class="k">Pendidikan</span>
-    <h2 class="sec">Riwayat <span style="color:var(--yellow)">Pendidikan</span></h2>
+    <span class="k">Academic</span>
+    <h2 class="sec">Educational <span style="color:var(--yellow)">Background</span></h2>
     <div id="pendidikanList"></div>
   </div>
 </section>
 
-<section id="organisasi" style="background:linear-gradient(180deg,var(--navy) 0%,#04184d 100%)">
+<section id="organization" style="background:linear-gradient(180deg,var(--navy) 0%,#04184d 100%)">
   <div class="wrap">
-    <span class="k">Organisasi</span>
-    <h2 class="sec">Pengalaman <span style="color:var(--yellow)">Organisasi</span></h2>
+    <span class="k">Leadership</span>
+    <h2 class="sec">Organizational <span style="color:var(--yellow)">Experience</span></h2>
     <div id="organisasiList"></div>
   </div>
 </section>
 
 <section id="achievements" style="background:linear-gradient(180deg,var(--navy) 0%,#04184d 100%)">
   <div class="wrap">
-    <span class="k">Prestasi</span>
-    <h2 class="sec">Achievement & <span style="color:var(--yellow)">Penghargaan</span></h2>
+    <span class="k">Honors</span>
+    <h2 class="sec">Awards & <span style="color:var(--yellow)">Achievements</span></h2>
     <ul id="achievementList" style="list-style:none;display:grid;gap:16px"></ul>
   </div>
 </section>
 
 <section id="skills" style="background:var(--navy)">
   <div class="wrap">
-    <span class="k">Keahlian</span>
-    <h2 class="sec">Skill & <span style="color:var(--yellow)">Expertise</span></h2>
+    <span class="k">Expertise</span>
+    <h2 class="sec">Skills & <span style="color:var(--yellow)">Proficiencies</span></h2>
     <div id="skillsContainer"></div>
   </div>
 </section>
 
-<section class="kontak" id="kontak">
+<section class="kontak" id="contact">
   <div class="wrap">
-    <span class="k">Kontak</span>
-    <h2 class="sec">Mari <span style="color:var(--yellow)">berkolaborasi</span></h2>
+    <span class="k">Get In Touch</span>
+    <h2 class="sec">Let's <span style="color:var(--yellow)">Collaborate</span></h2>
     <div class="kbtns" id="kontakBtns"></div>
+    <a class="kbtn gh" style="margin-top:14px" href="WEB/CV-I%20Gede%20Agung%20Yohana%20Dharma-resume%202026%20-%20Bali.pdf" target="_blank" rel="noopener">Lihat CV (PDF) ⇩</a>
   </div>
 </section>
 
-<footer><div class="wrap">© <span id="tahun"></span> <b data-t="nama"></b> — Filmmaker & Designer. Dibuat dengan tema <b>biru & kuning</b>.</div></footer>
+<footer><div class="wrap">© <span id="tahun"></span> <b data-t="nama"></b> — Filmmaker & Designer. All rights reserved.</div></footer>
 
 <div class="lb" id="lb"><button class="x" id="lbX">✕</button><img id="lbImg" alt="karya"><div class="cap" id="lbCap"></div><button class="nav prev" id="lbPrev">‹</button><button class="nav next" id="lbNext">›</button></div>
 <div class="toast" id="toast"></div>
@@ -234,7 +245,7 @@ const DEFAULT = {
   lokasi:"Bali, Indonesia",
   tagline:"Multidisciplinary film and digital content producer with 2+ years experience in video production, directing, and creative content management.",
   bio:"Film and Television graduate from Indonesian Institute of The Arts Yogyakarta with experience leading video production for YouTube channels (300K+ views), directing short and documentary films, and managing creative content.\n\nServed as Production Manager at Fixinema Media and Production Assistant at WKWK Project by Genflix (2M subscribers). Experienced in writing, directing, producing, graphic design, and festival programming.",
-  angka1:"30+", angka1Lb:"Video Projects",
+  angka1:"50+", angka1Lb:"Video Projects",
   angka2:"300K+", angka2Lb:"Total Views",
   kontak:{ email:"agungyohana05@gmail.com", wa:"6289682465080", linkedin:"linkedin.com/in/agungyohana", behance:"https://www.behance.net/gallery/247136419/PORTOFOLIO-2026" },
   pengalaman:[
@@ -268,19 +279,19 @@ const DEFAULT = {
       {file:"assets/desain/artboard-2.jpg",judul:"Filmography",tag:"Film Portfolio",isCategory:true},
       {file:"assets/desain/artboard-2-1.jpg",judul:"Behind the Sea",tag:"Documentary Film",year:"2024"},
       {file:"assets/desain/artboard-2-copy.jpg",judul:"Heaven Pass",tag:"Short Fiction Film",year:"2024"},
-      {file:"assets/desain/artboard-3.jpg",judul:"Film Project 3",tag:"Short Film",year:"2023"}
+      {file:"assets/desain/artboard-3.jpg",judul:"Film Project",tag:"Short Film",year:"2023"}
     ],
-    "Desain Grafis":[
+    "Graphic Design":[
       {file:"assets/desain/artboard-4.jpg",judul:"Graphic Design Portfolio",tag:"Design Works",isCategory:true},
-      {file:"assets/desain/artboard-5-copy.jpg",judul:"Social Media Content 1",tag:"Digital Design",year:"2024"},
-      {file:"assets/desain/artboard-5.jpg",judul:"Social Media Content 2",tag:"Digital Design",year:"2024"},
-      {file:"assets/desain/artboard-6.jpg",judul:"Brand Design",tag:"Graphic Design",year:"2023"},
-      {file:"assets/desain/artboard-7.jpg",judul:"Motion Graphics",tag:"2D Animation",year:"2023"}
+      {file:"assets/desain/artboard-5-copy.jpg",judul:"Social Media Content",tag:"Digital Design",year:"2024"},
+      {file:"assets/desain/artboard-5.jpg",judul:"Social Media Content",tag:"Graphic Design",year:"2024"},
+      {file:"assets/desain/artboard-6.jpg",judul:"Social Media Content",tag:"Graphic Design",year:"2023"},
+      {file:"assets/desain/artboard-7.jpg",judul:"Social Media Content",tag:"Graphic Design",year:"2023"}
     ],
     "Video Production":[
       {file:"assets/desain/artboard-4-copy.jpg",judul:"Video Production",tag:"Production Portfolio",isCategory:true},
-      {file:"assets/desain/artboard-8.jpg",judul:"Fixinema Podcast Series",tag:"YouTube Content",year:"2023-2024",desc:"30 episodes, 300K+ views"},
-      {file:"assets/desain/artboard-9.jpg",judul:"WKWK Project Content",tag:"Podcast Production",year:"2024-2025",desc:"20+ episodes for 2M subscriber channel"}
+      {file:"assets/desain/artboard-9.jpg",judul:"Fixinema Podcast Series",tag:"Podcast Production & YouTube Content",year:"2024-2025",desc:"20+ episodes for 2M subscriber channel"},
+      {file:"assets/desain/artboard-8.jpg",judul:"WKWK Project Content",tag:"Podcast Production & YouTube Content",year:"2023-2024",desc:"30 episodes, 300K+ views"}
     ]
   }
 };
